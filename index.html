@@ -8,22 +8,32 @@
 </head>
 <body>
 	<header>
-		<div class="logo">
-			<img id="loggo" src="grafik/Loggo.jpg">
-			<input type="image" id="menu-but" src="grafik/menu.png">
-			<ul class="dropdown">
-				<li><a href="index.html">Home</a></li>
-				<li><a href=".prev">Previous Projects</a></li>
-				<li><a href=".contact">Contact</a></li>
-				<li><a href=".about">About us</a></li>
+		<a href="#top"><img id="loggo" alt ="Loggo" src="grafik/Loggo.jpg"></a>
+		<nav>
+			<ul class="navBar">
+				<li><a href="#prev">Previous Projects</a></li>
+				<li><a href="#about">About us</a></li>
+				<li><a href="#contact">Contact</a></li>
 			</ul>
+		</nav>
+		<div>
 		</div>		
 	</header>
 	<main>
+		<a name="top"></a>
 		<div class="first">
 			<div class="box">
-				<h2>UNBOX MAKES WEBPAGES GREAT AGAIN</h2>
+				<h2>UNBOX MAKES YOUR WEBPAGE GREAT AGAIN</h2>
 			</div>
+			<div class="small-boxes">
+                <div class="small-box">
+                    <p>UnBox transforms oudated websites to modern responsive versions</p>
+                </div>
+                <div class="small-box">
+                    <p>UnBox also creates new webpages that will meet your every need</p>
+                </div>
+            </div>
+            <a name="prev"></a>
 		</div>
 		<div class="prev box">
 			<h2>A few of our previous projects</h2>
@@ -36,11 +46,28 @@
 			<img src="grafik/apple_old.png">
 			<img src="grafik/apple_new.png">
 		</picture>
-		<div class="contact box">
-		
+
+		<div class="contact box"><a name="contact"></a>
+		</div>
+		<div class="contact">
+			<div class="contact-info">
+				<p>UnBox<P>
+				<a href="http://kartor.eniro.se/?q=tomtebodav%C3%A4gen,+3a,+solna">Tomtebodavägen 3A</a>
+				<p>08 - 1337 1337</p>
+			</div>
+			<form id="mail-us" label="Send us a mail">
+				Name: <br>
+				<input type="text" name="name" class="inputbox" placeholder="Anna Andersson"><br><br>
+				E-mail: <br />
+				<input type="text" name="email" class="inputbox" placeholder="anna@mail.com"><br><br>
+				Message: <br>
+				<textarea name="message" rows="20" cols="40" class="inputarea" placeholder="Write your message here"></textarea><br><br>
+				<input type="submit" value="Send" class="submit-button">
+			</form>
+
 		</div>
 		<div class="about box">
-
+		<a name="about"></a>
 		</div>
 	</main>
 	<footer>
