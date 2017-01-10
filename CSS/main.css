@@ -20,6 +20,7 @@ body{
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	background-color: #18121e;
 }
 header{
 	margin:0;
@@ -31,7 +32,7 @@ header{
 }
 main{
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: center;
 
 }
@@ -70,35 +71,135 @@ main{
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
 	background-position: center center;
 	background-image: url("../grafik/city_ljus.jpg");
 	background-size: 100%;
-	font-family: 'vollkorn';
-	font-size: 3.5em;
-	color: #eac67a;
+	
 }
 .box{
-	margin: 2em;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 1.5em;
 	padding: 1em;
 	width: 70%;
 	height: 70%;
-	display: flex;
-	justify-content: center;
-	background-color: #18121e;
-	opacity: 0.5;
-	font-family: 'vollkorn';
-	color: #eac67a;
+	background-color: rgba(35, 50, 55, 0.4);
+
 }
-.projects{
+.contact-sec{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+.contact{
 	display: flex;
 	flex-flow: row wrap;
-}
-.projects img{
+	justify-content: space-around;
+	margin: 1.5em;
 	padding: 1em;
+	width: 78%;
+	background-color: rgba(35, 50, 55, 0.4);
+	font-family: 'exo';
+	color: #eac67a;
 }
+.contact-info{
+	display: flex;
+	flex-flow: column wrap;
+	font-size: 1.5em;
+}
+.contact-info p,
+#mail-us{
+	margin: 0.4em; 
+}
+.inputbox{
+	width: 21em;
+	height: 2em;
+	font-family: "exo";
+}
+.inputarea{
+	font-family: "exo";
+}
+.submit-button{
+	font-family: "exo";
+	font-size: 1.4em;
+	border: none;
+	border-radius: 30%;
+	background-color: #984B43;
+	color: #eac67a;
+	padding: 0.5em;
+	text-align: center;
+}
+h1,
+h2{
+	font-family: 'vollkorn';
+	color: #eac67a;
+	text-align: center;
+}
+.about h2,
+.contact-sec h2{
+		width: 100%;
+	}
+h1{
+	font-size: 400%;
+}
+h2 {
+	font-size: 200%;
+}
+.small-boxes{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+}
+.small-box{
+	margin: 0.5em;
+	padding: 0.2em;
+	width: 35%;
+	height: 35%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	background-color: rgba(24, 18, 30, 0.4);
+	font-family: 'exo';
+	color: #eac67a;
+	font-size: 130%;
+	text-align: center;
+}
+
+.about{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.employee{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	height: 100%;
+	margin: 1em;
+	background-color: rgba(35, 50, 55, 0.4);
+	font-family: 'exo';
+	color: #eac67a;
+}
+.employee picture img{
+	margin: 0.5em;
+}
+
+.info h3{
+	font-family: "vollkorn";
+}
+
 
 footer{
 	background-color: #18121e;
@@ -113,3 +214,48 @@ ul{
 	margin: 0;
 	list-style: none;
 }
+a{
+	text-decoration: none;
+	color: #eac67a;
+}
+a:hover{
+	color: #984B43;
+}
+
+@media (max-width: 426px){
+	.about{
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.employee{
+		display: flex;
+		flex-flow: row wrap;
+		width: 95%;
+		height: 100%;
+	}
+	.employee picture{
+		width: 50%;
+	}
+	.employee picture img{
+		width: 80%;
+		margin: 0.5em;
+	}
+	.contact{
+		width: 95%;
+		height: 100%;
+
+	}
+	.contact-info{
+		font-size: 1.5em;
+		margin-bottom: 1em;
+		padding: 0;
+	}
+
+	ul{
+		font-size: 0.6em;
+	}
+}
+
+
+	
+
