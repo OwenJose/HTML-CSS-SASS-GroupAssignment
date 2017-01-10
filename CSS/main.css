@@ -305,6 +305,33 @@ nav a:hover,
     .small-boxes{
     	margin: 0;
     }
+    .about{
+		display: flex;
+		flex-flow: column wrap;
+	}
+	.employee{
+		display: flex;
+		flex-flow: row wrap;
+		width: 95%;
+		height: 100%;
+	}
+	.employee picture{
+		width: 50%;
+	}
+	.employee picture img{
+		width: 80%;
+		margin: 0.5em;
+	}
+	.contact{
+		width: 95%;
+		height: 100%;
+
+	}
+	.contact-info{
+		font-size: 1.5em;
+		margin-bottom: 1em;
+		padding: 0;
+	}
     a{
     	font-size: .5em;
     }
@@ -319,11 +346,11 @@ nav a:hover,
     header{
     	height: 3em;
     }
+	ul{
+		font-size: 0.6em;
+	}
 }
 @media screen and (min-width: 427px) and (max-width: 769px){
-    body {
-        background-color: white;
-    }
     .box{
     	font-size: .3em;
     }
@@ -349,4 +376,125 @@ nav a:hover,
     header{
     	height: 4em;
     }
+}
+.contact-sec{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+.contact{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	margin: 1.5em;
+	padding: 1em;
+	width: 78%;
+	background-color: rgba(35, 50, 55, 0.4);
+	font-family: 'exo';
+	color: #eac67a;
+}
+.contact-info{
+	display: flex;
+	flex-flow: column wrap;
+	font-size: 1.5em;
+}
+.contact-info p,
+#mail-us{
+	margin: 0.4em; 
+}
+.inputbox{
+	width: 21em;
+	height: 2em;
+	font-family: "exo";
+}
+.inputarea{
+	font-family: "exo";
+}
+.submit-button{
+	font-family: "exo";
+	font-size: 1.4em;
+	border: none;
+	border-radius: 30%;
+	background-color: #984B43;
+	color: #eac67a;
+	padding: 0.5em;
+	text-align: center;
+}
+
+.about h2,
+.contact-sec h2,
+.project h2{
+		width: 100%;
+		text-align:center;
+		font-size: 200%;
+}
+.about{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+.employee{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	height: 100%;
+	margin: 1em;
+	background-color: rgba(35, 50, 55, 0.4);
+	font-family: 'exo';
+	color: #eac67a;
+}
+.employee picture img{
+	margin: 0.5em;
+}
+
+footer{
+	background-color: #18121e;
+	color: #eac67a;
+	font-family: 'exo';
+}
+footer ul{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	padding: 1em 0em 1em 0em;
+	margin: 0;
+	list-style: none;
+}
+.prevbox{
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+.project{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin: 1em;
+	background-color: rgba(35, 50, 55, 0.4);
+	font-family: 'exo';
+	color: #eac67a;
+}
+.apple,
+.amazon{
+    display: flex;
+    flex-flow: row;
+    width: 80%
+}
+.info{
+
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    padding: 1em;
+    text-align: center;
 }
