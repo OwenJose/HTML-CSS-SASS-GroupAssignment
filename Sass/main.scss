@@ -38,15 +38,10 @@ $opacity-bg: rgba(35, 50, 55, 0.4);
 	justify-content: center;
 	align-items: center;
 }
-@mixin w-h-100{
-	width: 100%;
-	height: 100%;
-}
 
 body{
 	background: #000;
 	@include margin-padd-0;
-	@include w-h-100;
 	@include flex-col;
 	justify-content: space-around;
 }
@@ -64,16 +59,49 @@ header{
 	height: 6em;
 
 }
-header div{
+header {
+	div{
+		width: 5em;
+		height: 5em;
+		margin: 1em;
+	}
+}
+#loggo {
+	float: left;
+	border: solid 1px #ffffff;
 	width: 5em;
 	height: 5em;
-	margin: 1em;
+	margin: 0 1em 0 1em;
 }
-main{
+.navBar {
+	li{
+		display: inline;
+		padding: 0 1em 0 1em;
+		font-size: 1.5em;
+	}
+}
+.first{
+	@include margin-padd-0;
+	@include flex-row;
+	@include center;
+	background-position: center center;
+	background-image: url("../grafik/city_ljus.jpg");
+	background-size: 100%;
+	font-family: $head-font;
+	font-size: 3.5em;
+	color: $color;
+}
+.box{
 	@include flex-col;
-	justify-content: center;
-	@include w-h-100;
-
+	@include center;
+	margin-top: 3em;
+	padding: 1em;
+	width: 70%;
+	height: 70%;
+	background-color: $opacity-bg;
+	font-family: $head-font;
+	color: $color;
+	text-align: center;
 }
 .small-boxes{
     @include flex-row;
@@ -93,32 +121,9 @@ main{
     font-size: .5em;
     text-align: center;
 }
-
-#loggo {
-	float: left;
-	border: solid 1px #ffffff;
-	width: 5em;
-	height: 5em;
-	margin: 0 1em 0 1em;
-}
-
-.first{
-	@include margin-padd-0;
-	@include w-h-100;
-	@include flex-row;
-	@include center;
-	background-position: center center;
-	background-image: url("../grafik/city_ljus.jpg");
-	background-size: 100%;
-	font-family: $head-font;
-	font-size: 3.5em;
-	color: $color;
-}
-
 .project{
 	@include flex-row;
 	@include center;
-	@include w-h-100;
 	@include margin-padd-0;
 	margin-top: 1em;
 	font-family: $body-font;
@@ -143,34 +148,18 @@ main{
     margin: 0.5em;
    
 }
-.info h3, 
-.info h4{
-	text-align: center;
-	@include margin-padd-0;
+.info {
+	h3, h4{
+		text-align: center;
+		@include margin-padd-0;
 	}
-.info picture {
-	display: flex;
-	@include center;
-	width: 100%;
 }
-
-.navBar li{
-	display: inline;
-	padding: 0 1em 0 1em;
-	font-size: 1.5em;
-}
-
-.box{
-	@include flex-col;
-	@include center;
-	margin-top: 3em;
-	padding: 1em;
-	width: 70%;
-	height: 70%;
-	background-color: $opacity-bg;
-	font-family: $head-font;
-	color: $color;
-	text-align: center;
+.info {
+	picture {
+		display: flex;
+		@include center;
+		width: 100%;
+	}
 }
 .clients{
 	@include flex-row;
@@ -184,7 +173,6 @@ main{
 		}
 	}
 }
-
 .about{
 	@include flex-row;
 	@include center;
@@ -193,21 +181,23 @@ main{
 	@include flex-col;
 	@include center;
 	width: 25%;
-	height: 100%;
 	margin: 1em;
 	background-color: $opacity-bg;
 	font-family: $body-font;
 	color: $color;
 }
-
-.employee picture img{
-	margin: 0.5em;
+.employee {
+	picture{
+		img{
+			margin: 0.5em;
+		}
+	}
 }
-
-.emp-info h3{
-	font-family: $head-font;
-	margin-bottom: 0.3em;
-
+.emp-info {
+	h3{
+		font-family: $head-font;
+		margin-bottom: 0.3em;
+	}
 }
 .contact-sec{
 	@include flex-col;
@@ -227,11 +217,12 @@ main{
 	@include flex-col;
 	font-size: 1.5em;
 }
-.contact-info p,
+.contact-info,
 #mail-us{
-	margin: 0.4em;
+	p{
+		margin: 0.4em;
+	}
 }
-
 .inputbox{
 	width: 21em;
 	height: 2em;
@@ -264,14 +255,22 @@ h4{
 	color: $color;
 	font-family: $head-font;
 }
-.about h2,
-.contact-sec h2,
-.project h2, 
-.clients h3{
+.about,
+.contact-sec,
+.project, 
+.clients{
+	h2{
 		width: 100%;
 		text-align:center;
 		font-size: 200%;
 		margin-top: 2em;
+	}
+}
+.clients{
+	h2{
+		font-size: 150%;
+		margin-top: 1em;
+	}
 }
 a{
 	text-decoration: none;
@@ -287,16 +286,33 @@ footer{
 	color: $color;
 	font-family: $body-font;
 }
-footer ul{
-	@include flex-row;
-	justify-content: space-around;
-	padding: 1em 0em 1em 0em;
-	font-size: 1.3em;
-	list-style: none;
+footer {
+	ul{
+		@include flex-row;
+		justify-content: space-around;
+		padding: 1em 0em 1em 0em;
+		font-size: 1.3em;
+		list-style: none;
+	}
 }
 
 
 @media screen and (max-width: 426px) {
+	header {
+    	div{
+    		height: 2em;
+    		width: 2em;
+    		margin: 0;
+    	}
+    }
+    header{
+    	height: 3em;
+    }
+    .navBar {
+    	li{
+    		padding: 0.1em 0 .1em;
+    	}
+    }
     .box{
     	font-size: .25em;
     	margin-top: 4em;
@@ -309,22 +325,23 @@ footer ul{
     .small-boxes{
     	margin: 0;
     }
-
-.apple,
-.amazon{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  	width: 100%;
-  	margin-left:0.1em;
-}
-.info{
-    margin: 0.1em;
-    text-align: left;
-    font-size: 0.7em;
-}
-
-
+	.apple,
+	.amazon{
+   		display: flex;
+    	flex-direction: row;
+    	justify-content: space-around;
+  		width: 100%;
+  		margin: 0.5em;
+  		margin-left:0.1em;
+	}
+	.info{
+		width: 45%;
+	}
+	.info{
+    	margin: 0.1em;
+    	text-align: left;
+    	font-size: 0.7em;
+	}
     .about{
 		@include flex-col;
 	}
@@ -333,15 +350,15 @@ footer ul{
 		width: 95%;
 		height: 100%;
 	}
-	
-	.employee picture img{
-		
-		margin: 0.5em;
+	.employee {
+		picture{ 
+			img{
+				margin: 0.5em;
+			}
+		}
 	}
 	.contact{
 		width: 95%;
-		height: 100%;
-
 	}
 	.contact-info{
 		font-size: 1.2em;
@@ -351,46 +368,47 @@ footer ul{
     a{
     	font-size: .5em;
     }
-  
-    .navBar li{
-    	padding: 0.1em 0 .1em;
+    .contact-info {
+    	a{
+    		font-size: 1em;
+    	}
     }
-    header div{
-    	height: 2em;
-    	width: 2em;
-    	margin: 0;
-    }
-    header{
-    	height: 3em;
-    }
-    .contact-info a{
-    	font-size: 1em;
-    }
-	footer ul{
-		font-size: 0.6em;
+	footer {
+		ul{
+			font-size: 0.6em;
+		}
 	}
-	.footer a{
-		font-size: 1em;
+	.footer {
+		a{
+			font-size: 1em;
+		}
 	}
-	.about h2,
-	.contact-sec h2,
-	.project h2{
-		font-size: 1.3em;
-		margin-top: 0.5em;
+	.about,
+	.contact-sec,
+	.project{
+		h2{
+			font-size: 1.3em;
+			margin-top: 0.5em;
+		}
 	}
-	.clients h3{
-		font-size: 1em;
-		margin-top: 0.5em;
-	}
-	.apple,
-	.amazon{
-		margin: 0.5em;
-	}
-	.info{
-		width: 45%;
+	.clients {
+		h2{
+			font-size: 1em;
+			margin-top: 0.5em;
+		}
 	}
 }
 @media screen and (min-width: 427px) and (max-width: 769px){
+	header {
+    	div{
+    		height: 2em;
+    		width: 2em;
+    		margin: 0;
+    	}
+    }
+    header{
+    	height: 4em;
+    }
     .box{
     	font-size: .3em;
    		margin-top: 5em;
@@ -406,32 +424,43 @@ footer ul{
    a{
     	font-size: .7em;
     }
-    .navBar li{
-    	padding: 0 .2em 0 .2em;
+    .navBar {
+    	li{
+    		padding: 0 .2em 0 .2em;
+    	}
     }
-    header div{
-    	height: 2em;
-    	width: 2em;
-    	margin: 0;
-    }
-    header{
-    	height: 4em;
-    }
-       .contact-info a{
-    	font-size: 1em;
-    }
-	footer ul{
-		font-size: 0.8em;
-	}
-	.footer a{
-		font-size: 1em;
-	}
-	.info{
+    .info{
 		width: 45%;
 	}
+    .about,
+	.contact-sec,
+	.project{
+		h2{
+			font-size: 1.7em;
+			margin-top: 0.5em;
+		}
+	}
+	.clients {
+		h2{
+			font-size: 1em;
+			margin-top: 0.5em;
+		}
+	}
+    .contact-info {
+    	a{
+    		font-size: 1em;
+    	}
+    }
+	footer {
+		ul{
+			font-size: 0.8em;
+		}
+	}
+	.footer {
+		a{
+			font-size: 1em;
+		}
+	}
+	
 }
-
-
-
-
 
