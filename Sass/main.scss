@@ -1,0 +1,466 @@
+@font-face {
+    font-family: 'exo';
+    src: url('Fonts/exo-regular-webfont.woff2') format('woff2'),
+         url('Fonts/exo-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'vollkorn';
+    src: url('Fonts/vollkorn-semibold-webfont.woff2') format('woff2'),
+         url('Fonts/vollkorn-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$body-font: "exo", sans-serif;
+$head-font: "vollkorn", serif;
+$bgcolor: #18121e;
+$color: #eac67a;
+$link-color :#984B43;
+$opacity-bg: rgba(35, 50, 55, 0.4);
+
+@mixin margin-padd-0{
+	margin: 0;
+	padding: 0;
+}
+
+@mixin flex-row{
+	display: flex;
+	flex-flow: row wrap;
+}
+
+@mixin flex-col{
+	display:flex;
+	flex-flow: column wrap;
+}
+@mixin center{
+	justify-content: center;
+	align-items: center;
+}
+
+body{
+	background: #000;
+	@include margin-padd-0;
+	@include flex-col;
+	justify-content: space-around;
+}
+header{
+	@include margin-padd-0;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	background-color: $opacity-bg;
+	@include flex-row;
+	align-items: center;
+	justify-content:space-between;
+	width: 100%;
+	height: 6em;
+
+}
+header {
+	div{
+		width: 5em;
+		height: 5em;
+		margin: 1em;
+	}
+}
+#loggo {
+	float: left;
+	border: solid 1px #ffffff;
+	width: 5em;
+	height: 5em;
+	margin: 0 1em 0 1em;
+}
+.navBar {
+	li{
+		display: inline;
+		padding: 0 1em 0 1em;
+		font-size: 1.5em;
+	}
+}
+.first{
+	@include margin-padd-0;
+	@include flex-row;
+	@include center;
+	background-position: center center;
+	background-image: url("../grafik/city_ljus.jpg");
+	background-size: 100%;
+	font-family: $head-font;
+	font-size: 3.5em;
+	color: $color;
+}
+.box{
+	@include flex-col;
+	@include center;
+	margin-top: 3em;
+	padding: 1em;
+	width: 70%;
+	height: 70%;
+	background-color: $opacity-bg;
+	font-family: $head-font;
+	color: $color;
+	text-align: center;
+}
+.small-boxes{
+    @include flex-row;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.small-box{
+    margin: .5em;
+    padding: .5em;
+    width: 35%;
+    height: 35%;
+    @include flex-row;
+    justify-content: center;
+    background-color: $opacity-bg;
+    font-family: $body-font;
+    color: $color;
+    font-size: .5em;
+    text-align: center;
+}
+.project{
+	@include flex-row;
+	@include center;
+	@include margin-padd-0;
+	margin-top: 1em;
+	font-family: $body-font;
+	color: $color;
+}
+
+.project img{
+	padding: 0.2em;
+}
+.apple,
+.amazon{
+    @include flex-row;
+    @include margin-padd-0;
+    justify-content: space-around;
+  	width: 78%;
+  	margin:2em;
+  	background-color: $opacity-bg;
+}
+.info{
+    @include flex-col;
+    width: 40%;
+    margin: 0.5em;
+   
+}
+.info {
+	h3, h4{
+		text-align: center;
+		@include margin-padd-0;
+	}
+}
+.info {
+	picture {
+		display: flex;
+		@include center;
+		width: 100%;
+	}
+}
+.clients{
+	@include flex-row;
+	@include center;
+	@include margin-padd-0;
+	picture{
+		@include flex-row;
+		@include center;
+		img{
+			padding: 1em;
+		}
+	}
+}
+.about{
+	@include flex-row;
+	@include center;
+}
+.employee{
+	@include flex-col;
+	@include center;
+	width: 25%;
+	margin: 1em;
+	background-color: $opacity-bg;
+	font-family: $body-font;
+	color: $color;
+}
+.employee {
+	picture{
+		img{
+			margin: 0.5em;
+		}
+	}
+}
+.emp-info {
+	h3{
+		font-family: $head-font;
+		margin-bottom: 0.3em;
+	}
+}
+.contact-sec{
+	@include flex-col;
+	@include center;
+}
+.contact{
+	@include flex-row;
+	justify-content: space-around;
+	margin: 1.5em;
+	padding: 1em;
+	width: 78%;
+	background-color: $opacity-bg;
+	font-family: $body-font;
+	color: $color;
+}
+.contact-info{
+	@include flex-col;
+	font-size: 1.5em;
+}
+.contact-info,
+#mail-us{
+	p{
+		margin: 0.4em;
+	}
+}
+.inputbox{
+	width: 21em;
+	height: 2em;
+	font-family: $body-font;
+}
+.inputarea{
+	font-family: $body-font;
+}
+.submit-button{
+	font-family: $body-font;
+	font-size: 1.4em;
+	border: none;
+	border-radius: 30%;
+	background-color: $link-color;
+	color: $color;
+	padding: 0.5em;
+	text-align: center;
+}
+.submit-button:hover{
+	font-weight: bold;
+}
+p{
+	color: $color;
+	font-family: $body-font;
+}
+h1,
+h2,
+h3,
+h4{ 
+	color: $color;
+	font-family: $head-font;
+}
+.about,
+.contact-sec,
+.project, 
+.clients{
+	h2{
+		width: 100%;
+		text-align:center;
+		font-size: 200%;
+		margin-top: 2em;
+	}
+}
+.clients{
+	h2{
+		font-size: 150%;
+		margin-top: 1em;
+	}
+}
+a{
+	text-decoration: none;
+	color: $color;
+	font-family: $body-font;
+}
+a:hover{
+	color: $link-color;
+}
+
+footer{
+	background-color: $bgcolor;
+	color: $color;
+	font-family: $body-font;
+}
+footer {
+	ul{
+		@include flex-row;
+		justify-content: space-around;
+		padding: 1em 0em 1em 0em;
+		font-size: 1.3em;
+		list-style: none;
+	}
+}
+
+
+@media screen and (max-width: 426px) {
+	header {
+    	div{
+    		height: 2em;
+    		width: 2em;
+    		margin: 0;
+    	}
+    }
+    header{
+    	height: 3em;
+    }
+    .navBar {
+    	li{
+    		padding: 0.1em 0 .1em;
+    	}
+    }
+    .box{
+    	font-size: .25em;
+    	margin-top: 4em;
+    }
+    .small-box{
+    	font-size: .2em;
+    	padding: 0;
+    	margin: 0.75em;
+    }
+    .small-boxes{
+    	margin: 0;
+    }
+	.apple,
+	.amazon{
+   		display: flex;
+    	flex-direction: row;
+    	justify-content: space-around;
+  		width: 100%;
+  		margin: 0.5em;
+  		margin-left:0.1em;
+	}
+	.info{
+		width: 45%;
+	}
+	.info{
+    	margin: 0.1em;
+    	text-align: left;
+    	font-size: 0.7em;
+	}
+    .about{
+		@include flex-col;
+	}
+	.employee{
+		@include flex-row;
+		width: 95%;
+		height: 100%;
+	}
+	.employee {
+		picture{ 
+			img{
+				margin: 0.5em;
+			}
+		}
+	}
+	.contact{
+		width: 95%;
+	}
+	.contact-info{
+		font-size: 1.2em;
+		margin-bottom: 1em;
+		padding: 0;
+	}
+    a{
+    	font-size: .5em;
+    }
+    .contact-info {
+    	a{
+    		font-size: 1em;
+    	}
+    }
+	footer {
+		ul{
+			font-size: 0.6em;
+		}
+	}
+	.footer {
+		a{
+			font-size: 1em;
+		}
+	}
+	.about,
+	.contact-sec,
+	.project{
+		h2{
+			font-size: 1.3em;
+			margin-top: 0.5em;
+		}
+	}
+	.clients {
+		h2{
+			font-size: 1em;
+			margin-top: 0.5em;
+		}
+	}
+}
+@media screen and (min-width: 427px) and (max-width: 769px){
+	header {
+    	div{
+    		height: 2em;
+    		width: 2em;
+    		margin: 0;
+    	}
+    }
+    header{
+    	height: 4em;
+    }
+    .box{
+    	font-size: .3em;
+   		margin-top: 5em;
+    }
+    .small-box{
+    	font-size: .2em;
+    	padding: 0;
+    	margin: 0.5em;
+    }
+    .small-boxes{
+    	margin: 0;
+    }
+   a{
+    	font-size: .7em;
+    }
+    .navBar {
+    	li{
+    		padding: 0 .2em 0 .2em;
+    	}
+    }
+    .info{
+		width: 45%;
+	}
+    .about,
+	.contact-sec,
+	.project{
+		h2{
+			font-size: 1.7em;
+			margin-top: 0.5em;
+		}
+	}
+	.clients {
+		h2{
+			font-size: 1em;
+			margin-top: 0.5em;
+		}
+	}
+    .contact-info {
+    	a{
+    		font-size: 1em;
+    	}
+    }
+	footer {
+		ul{
+			font-size: 0.8em;
+		}
+	}
+	.footer {
+		a{
+			font-size: 1em;
+		}
+	}
+	
+}
+
