@@ -12,8 +12,12 @@ body {
   background: #000;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
+  -ms-flex-pack: distribute;
   justify-content: space-around; }
 
 header {
@@ -24,17 +28,24 @@ header {
   left: 0;
   top: 0;
   background-color: rgba(35, 50, 55, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  height: 6em; }
+  height: 3em; }
 
 header div {
   width: 5em;
-  height: 5em;
-  margin: 1em; }
+  height: 2em;
+  margin: 0; }
 
 #loggo {
   float: left;
@@ -45,87 +56,96 @@ header div {
 
 .navBar li {
   display: inline;
-  padding: 0 1em 0 1em;
-  font-size: 1.5em; }
+  padding: 0.1em 0 0.1em; }
 
 .first {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-position: center center;
   background-image: url("../grafik/city_ljus.jpg");
-  background-size: 100%;
-  font-family: "vollkorn", serif;
-  font-size: 3.5em;
-  color: #eac67a; }
+  background-size: 100%; }
 
 .box {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3em;
-  padding: 1em;
+  margin-top: 4em;
+  padding: 0.5em;
   width: 70%;
-  height: 70%;
   background-color: rgba(35, 50, 55, 0.4);
-  font-family: "vollkorn", serif;
-  color: #eac67a;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.8em; }
 
 .small-boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  justify-content: center;
-  margin-bottom: 1em; }
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .small-box {
-  margin: .5em;
-  padding: .5em;
-  width: 35%;
-  height: 35%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  padding: 0.5em;
+  margin: 0.75em;
+  width: 40%;
   background-color: rgba(35, 50, 55, 0.4);
-  font-family: "exo", sans-serif;
-  color: #eac67a;
   font-size: .5em;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.6em; }
 
 .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
-  margin-top: 1em;
-  font-family: "exo", sans-serif;
-  color: #eac67a; }
+  margin-top: 1em; }
 
 .project img {
   padding: 0.2em; }
 
 .apple,
 .amazon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   margin: 0;
   padding: 0;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
-  width: 78%;
-  margin: 2em;
+  width: 90%;
+  margin: 0.5em;
   background-color: rgba(35, 50, 55, 0.4); }
+  .apple picture img:hover,
+  .amazon picture img:hover {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform: scale(2);
+    transform: scale(2); }
 
 .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
-  width: 40%;
-  margin: 0.5em; }
+  width: 45%;
+  text-align: left;
+  font-size: 0.7em; }
 
 .info h3, .info h4 {
   text-align: center;
@@ -133,38 +153,77 @@ header div {
   padding: 0; }
 
 .info picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  width: 100%; }
+  width: 90%; }
 
 .clients {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 0;
   padding: 0; }
-  .clients picture {
+  .clients div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center; }
-    .clients picture img {
-      padding: 1em; }
+    .clients div img {
+      padding: 1.5em; }
+    .clients div img:hover {
+      -webkit-transition: all 1.5s ease;
+      transition: all 1.5s ease;
+      -webkit-transform: rotate(360deg) scale(2);
+      transform: rotate(360deg) scale(2); }
 
 .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center; }
 
 .employee {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  width: 25%;
+  width: 50%;
   margin: 1em;
   background-color: rgba(35, 50, 55, 0.4);
   font-family: "exo", sans-serif;
@@ -178,29 +237,50 @@ header div {
   margin-bottom: 0.3em; }
 
 .contact-sec {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  align-items: center; }
-
-.contact {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin: 1.5em;
-  padding: 1em;
-  width: 78%;
-  background-color: rgba(35, 50, 55, 0.4);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-family: "exo", sans-serif;
   color: #eac67a; }
 
-.contact-info {
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin: 0.5em;
+  padding: 1em;
+  width: 70%;
+  background-color: rgba(35, 50, 55, 0.4); }
+
+.contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
-  font-size: 1.5em; }
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  padding: 0;
+  text-align: left; }
+
+.contact-info a {
+  font-size: 1em;
+  margin: 0.4em; }
 
 .contact-info p,
-#mail-us p {
+.mail-us p {
   margin: 0.4em; }
 
 .inputbox {
@@ -221,8 +301,9 @@ header div {
   padding: 0.5em;
   text-align: center; }
 
-.submit-button:hover {
-  font-weight: bold; }
+.submit-button:active {
+  font-weight: bold;
+  transform: scale(1.3); }
 
 p {
   color: #eac67a;
@@ -241,20 +322,24 @@ h4 {
 .clients h2 {
   width: 100%;
   text-align: center;
-  font-size: 200%;
-  margin-top: 2em; }
+  margin-top: 0.5em; }
 
 .clients h2 {
-  font-size: 150%;
-  margin-top: 1em; }
+  font-size: 1em;
+  margin-top: 0.5em; }
 
 a {
   text-decoration: none;
   color: #eac67a;
-  font-family: "exo", sans-serif; }
+  font-family: "exo", sans-serif;
+  font-size: .5em; }
 
 a:hover {
   color: #984B43; }
+
+.footer a,
+.emp-info a {
+  font-size: 1em; }
 
 footer {
   background-color: #18121e;
@@ -262,125 +347,68 @@ footer {
   font-family: "exo", sans-serif; }
 
 footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   padding: 1em 0em 1em 0em;
   font-size: 1.3em;
-  list-style: none; }
+  list-style: none;
+  font-size: 0.6em; }
 
-@media screen and (max-width: 426px) {
+@media screen and (min-width: 427px) and (max-width: 768px) {
   header div {
     height: 2em;
-    width: 2em;
+    width: 5em;
     margin: 0; }
 
   header {
-    height: 3em; }
-
-  .navBar li {
-    padding: 0.1em 0 .1em; }
+    height: 5em; }
 
   .box {
-    font-size: .25em;
-    margin-top: 4em; }
-
-  .small-box {
-    font-size: .2em;
-    padding: 0;
-    margin: 0.75em; }
-
-  .small-boxes {
-    margin: 0; }
-
-  .apple,
-  .amazon {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    margin: 0.5em;
-    margin-left: 0.1em; }
-
-  .info {
-    width: 45%; }
-
-  .info {
-    margin: 0.1em;
-    text-align: left;
-    font-size: 0.7em; }
-
-  .about {
-    display: flex;
-    flex-flow: column wrap; }
-
-  .employee {
-    display: flex;
-    flex-flow: row wrap;
-    width: 95%;
-    height: 100%; }
-
-  .employee picture img {
-    margin: 0.5em; }
-
-  .contact {
-    width: 95%; }
-
-  .contact-info {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-    padding: 0; }
-
-  a {
-    font-size: .5em; }
-
-  .contact-info a {
-    font-size: 1em; }
-
-  footer ul {
-    font-size: 0.6em; }
-
-  .footer a {
-    font-size: 1em; }
-
-  .about h2,
-  .contact-sec h2,
-  .project h2 {
-    font-size: 1.3em;
-    margin-top: 0.5em; }
-
-  .clients h2 {
-    font-size: 1em;
-    margin-top: 0.5em; } }
-@media screen and (min-width: 427px) and (max-width: 769px) {
-  header div {
-    height: 2em;
-    width: 2em;
-    margin: 0; }
-
-  header {
-    height: 4em; }
-
-  .box {
-    font-size: .3em;
+    font-size: 1.4em;
     margin-top: 5em; }
 
   .small-box {
-    font-size: .2em;
+    font-size: 1em;
     padding: 0;
     margin: 0.5em; }
 
   .small-boxes {
-    margin: 0; }
+    margin: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
 
   a {
-    font-size: .7em; }
+    font-size: .9em; }
 
   .navBar li {
     padding: 0 .2em 0 .2em; }
 
+  .project {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+  .apple,
+  .amazon {
+    margin: 0.6em; }
+
   .info {
-    width: 45%; }
+    width: 35%;
+    font-size: 1em; }
 
   .about h2,
   .contact-sec h2,
@@ -392,6 +420,16 @@ footer ul {
     font-size: 1em;
     margin-top: 0.5em; }
 
+  .about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap; }
+
+  .employee {
+    width: 25%; }
+
   .contact-info a {
     font-size: 1em; }
 
@@ -400,5 +438,91 @@ footer ul {
 
   .footer a {
     font-size: 1em; } }
+@media screen and (min-width: 769px) {
+  header {
+    height: 6em; }
+
+  header div {
+    height: 5em;
+    width: 5em;
+    margin: 0; }
+
+  .navBar li {
+    padding: 0 1em 0 1em;
+    font-size: 1.5em; }
+
+  .box {
+    font-size: 2.5em; }
+
+  .small-box {
+    font-size: 1.3em;
+    margin: .5em;
+    padding: .5em; }
+
+  .small-boxes {
+    margin: 1em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+
+  .apple,
+  .amazon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    width: 100%;
+    margin: 2em; }
+
+  .info {
+    width: 40%;
+    margin: 0.5em;
+    font-size: 1em; }
+
+  .about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap; }
+
+  .employee {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    width: 25%; }
+
+  .emp-info {
+    width: 70%; }
+
+  .contact {
+    width: 78%; }
+
+  .contact-info {
+    font-size: 1.5em; }
+
+  a {
+    font-size: 1em; }
+
+  footer ul {
+    font-size: 1.3em;
+    padding: 0; }
+
+  .about h2,
+  .contact-sec h2,
+  .project h2 {
+    font-size: 2.5em;
+    margin-top: 1em; }
+
+  .clients h2 {
+    font-size: 1.5em;
+    margin-top: 1em; } }
 
 /*# sourceMappingURL=main.css.map */
