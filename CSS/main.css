@@ -130,6 +130,12 @@ header div {
   width: 90%;
   margin: 0.5em;
   background-color: rgba(35, 50, 55, 0.4); }
+  .apple picture img:hover,
+  .amazon picture img:hover {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform: scale(2);
+    transform: scale(2); }
 
 .info {
   display: -webkit-box;
@@ -186,6 +192,11 @@ header div {
     align-items: center; }
     .clients div img {
       padding: 1.5em; }
+    .clients div img:hover {
+      -webkit-transition: all 1.5s ease;
+      transition: all 1.5s ease;
+      -webkit-transform: rotate(360deg) scale(2);
+      transform: rotate(360deg) scale(2); }
 
 .about {
   display: -webkit-box;
@@ -290,8 +301,9 @@ header div {
   padding: 0.5em;
   text-align: center; }
 
-.submit-button:hover {
-  font-weight: bold; }
+.submit-button:active {
+  font-weight: bold;
+  transform: scale(1.3); }
 
 p {
   color: #eac67a;
