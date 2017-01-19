@@ -26,24 +26,35 @@ $opacity-bg: rgba(35, 50, 55, 0.4);
 }
 
 @mixin flex-row{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
 }
 
 @mixin flex-col{
+	display:-webkit-box;
+	display:-ms-flexbox;
 	display:flex;
-	flex-flow: column wrap;
+	-ms-flex-flow: column wrap;
+	    flex-flow: column wrap;
 }
 @mixin center{
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 body{
 	background: #000;
 	@include margin-padd-0;
 	@include flex-col;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 }
 header{
 	@include margin-padd-0;
@@ -53,17 +64,21 @@ header{
 	top: 0;
 	background-color: $opacity-bg;
 	@include flex-row;
-	align-items: center;
-	justify-content:space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
 	width: 100%;
-	height: 6em;
+	height: 3em;
 
 }
 header {
 	div{
 		width: 5em;
-		height: 5em;
-		margin: 1em;
+		height: 2em;
+		margin: 0;
 	}
 }
 #loggo {
@@ -76,8 +91,7 @@ header {
 .navBar {
 	li{
 		display: inline;
-		padding: 0 1em 0 1em;
-		font-size: 1.5em;
+		padding: 0.1em 0 0.1em;
 	}
 }
 .first{
@@ -87,47 +101,34 @@ header {
 	background-position: center center;
 	background-image: url("../grafik/city_ljus.jpg");
 	background-size: 100%;
-	font-family: $head-font;
-	font-size: 3.5em;
-	color: $color;
 }
 .box{
-	@include flex-col;
-	@include center;
-	margin-top: 3em;
-	padding: 1em;
+	margin-top: 4em;
+	padding: 0.5em;
 	width: 70%;
-	height: 70%;
 	background-color: $opacity-bg;
-	font-family: $head-font;
-	color: $color;
 	text-align: center;
+	font-size: 0.8em;
 }
 .small-boxes{
     @include flex-row;
-    justify-content: center;
-    margin-bottom: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .small-box{
-    margin: .5em;
-    padding: .5em;
-    width: 35%;
-    height: 35%;
-    @include flex-row;
-    justify-content: center;
+	padding: 0.5em;
+    margin: 0.75em;
+    width: 40%;
     background-color: $opacity-bg;
-    font-family: $body-font;
-    color: $color;
     font-size: .5em;
     text-align: center;
+    font-size: 0.6em;
 }
 .project{
 	@include flex-row;
-	@include center;
 	@include margin-padd-0;
 	margin-top: 1em;
-	font-family: $body-font;
-	color: $color;
 }
 
 .project img{
@@ -137,15 +138,27 @@ header {
 .amazon{
     @include flex-row;
     @include margin-padd-0;
-    justify-content: space-around;
-  	width: 78%;
-  	margin:2em;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  	width: 90%;
+  	margin: 0.5em;
   	background-color: $opacity-bg;
+  	picture{
+  		img:hover{
+  			-webkit-transition: all 1s ease;
+  			transition: all 1s ease;
+			-webkit-transform: scale(2);
+			        transform: scale(2);
+  		}
+
+  	}
 }
 .info{
     @include flex-col;
-    width: 40%;
-    margin: 0.5em;
+    width: 45%;
+    text-align: left;
+    font-size: 0.7em;
+    
    
 }
 .info {
@@ -156,35 +169,44 @@ header {
 }
 .info {
 	picture {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		@include center;
-		width: 100%;
+		width: 90%;
 	}
 }
 .clients{
 	@include flex-row;
 	@include center;
 	@include margin-padd-0;
-	picture{
+	div{
 		@include flex-row;
 		@include center;
 		img{
-			padding: 1em;
+			padding: 1.5em;
+		}
+		img:hover{
+			-webkit-transition: all 1.5s ease;
+  			transition: all 1.5s ease;
+  			-webkit-transform: rotate(360deg) scale(2);
+  			        transform: rotate(360deg) scale(2);
 		}
 	}
 }
 .about{
-	@include flex-row;
+	@include flex-col;
 	@include center;
 }
 .employee{
 	@include flex-col;
 	@include center;
-	width: 25%;
+	width: 50%;
 	margin: 1em;
 	background-color: $opacity-bg;
 	font-family: $body-font;
 	color: $color;
+	
 }
 .employee {
 	picture{
@@ -202,23 +224,34 @@ header {
 .contact-sec{
 	@include flex-col;
 	@include center;
-}
-.contact{
-	@include flex-row;
-	justify-content: space-around;
-	margin: 1.5em;
-	padding: 1em;
-	width: 78%;
-	background-color: $opacity-bg;
 	font-family: $body-font;
 	color: $color;
 }
+.contact{
+	@include flex-row;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	margin: 0.5em;
+	padding: 1em;
+	width: 70%;
+	background-color: $opacity-bg;
+	
+}
 .contact-info{
 	@include flex-col;
-	font-size: 1.5em;
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	padding: 0;
+	text-align: left;
+}
+.contact-info {
+    a{
+    	font-size: 1em;
+    	margin: 0.4em;
+    }
 }
 .contact-info,
-#mail-us{
+.mail-us{
 	p{
 		margin: 0.4em;
 	}
@@ -241,8 +274,9 @@ header {
 	padding: 0.5em;
 	text-align: center;
 }
-.submit-button:hover{
+.submit-button:active{
 	font-weight: bold;
+	transform: scale(1.3);
 }
 p{
 	color: $color;
@@ -262,25 +296,31 @@ h4{
 	h2{
 		width: 100%;
 		text-align:center;
-		font-size: 200%;
-		margin-top: 2em;
+		margin-top: 0.5em;
 	}
 }
 .clients{
 	h2{
-		font-size: 150%;
-		margin-top: 1em;
+		font-size: 1em;
+		margin-top: 0.5em;
+		
 	}
 }
 a{
 	text-decoration: none;
 	color: $color;
 	font-family: $body-font;
+	font-size: .5em;
 }
 a:hover{
 	color: $link-color;
 }
-
+.footer,
+.emp-info {
+	a{
+		font-size: 1em;
+	}
+}
 footer{
 	background-color: $bgcolor;
 	color: $color;
@@ -289,148 +329,62 @@ footer{
 footer {
 	ul{
 		@include flex-row;
-		justify-content: space-around;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
 		padding: 1em 0em 1em 0em;
 		font-size: 1.3em;
 		list-style: none;
+		font-size: 0.6em;
 	}
 }
 
 
-@media screen and (max-width: 426px) {
+
+@media screen and (min-width: 427px) and (max-width: 768px){
 	header {
     	div{
     		height: 2em;
-    		width: 2em;
+    		width: 5em;
     		margin: 0;
     	}
     }
     header{
-    	height: 3em;
-    }
-    .navBar {
-    	li{
-    		padding: 0.1em 0 .1em;
-    	}
+    	height: 5em;
     }
     .box{
-    	font-size: .25em;
-    	margin-top: 4em;
-    }
-    .small-box{
-    	font-size: .2em;
-    	padding: 0;
-    	margin: 0.75em;
-    }
-    .small-boxes{
-    	margin: 0;
-    }
-	.apple,
-	.amazon{
-   		display: flex;
-    	flex-direction: row;
-    	justify-content: space-around;
-  		width: 100%;
-  		margin: 0.5em;
-  		margin-left:0.1em;
-	}
-	.info{
-		width: 45%;
-	}
-	.info{
-    	margin: 0.1em;
-    	text-align: left;
-    	font-size: 0.7em;
-	}
-    .about{
-		@include flex-col;
-	}
-	.employee{
-		@include flex-row;
-		width: 95%;
-		height: 100%;
-	}
-	.employee {
-		picture{ 
-			img{
-				margin: 0.5em;
-			}
-		}
-	}
-	.contact{
-		width: 95%;
-	}
-	.contact-info{
-		font-size: 1.2em;
-		margin-bottom: 1em;
-		padding: 0;
-	}
-    a{
-    	font-size: .5em;
-    }
-    .contact-info {
-    	a{
-    		font-size: 1em;
-    	}
-    }
-	footer {
-		ul{
-			font-size: 0.6em;
-		}
-	}
-	.footer {
-		a{
-			font-size: 1em;
-		}
-	}
-	.about,
-	.contact-sec,
-	.project{
-		h2{
-			font-size: 1.3em;
-			margin-top: 0.5em;
-		}
-	}
-	.clients {
-		h2{
-			font-size: 1em;
-			margin-top: 0.5em;
-		}
-	}
-}
-@media screen and (min-width: 427px) and (max-width: 769px){
-	header {
-    	div{
-    		height: 2em;
-    		width: 2em;
-    		margin: 0;
-    	}
-    }
-    header{
-    	height: 4em;
-    }
-    .box{
-    	font-size: .3em;
+    	font-size: 1.4em;
    		margin-top: 5em;
     }
     .small-box{
-    	font-size: .2em;
+    	font-size: 1em;
     	padding: 0;
     	margin: 0.5em;
     }
     .small-boxes{
     	margin: 0;
+    	-webkit-box-pack: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
     }
    a{
-    	font-size: .7em;
+    	font-size: .9em;
     }
     .navBar {
     	li{
     		padding: 0 .2em 0 .2em;
     	}
     }
+    .project{
+    	@include flex-col;
+    	@include center;
+    }
+    .apple,
+    .amazon{
+    	margin: 0.6em;
+    }
     .info{
-		width: 45%;
+		width: 35%;
+		font-size: 1em;
 	}
     .about,
 	.contact-sec,
@@ -445,6 +399,12 @@ footer {
 			font-size: 1em;
 			margin-top: 0.5em;
 		}
+	}
+	.about{
+		@include flex-row;
+	}
+	.employee{
+		width: 25%;
 	}
     .contact-info {
     	a{
@@ -464,3 +424,100 @@ footer {
 	
 }
 
+@media screen and (min-width: 769px) {
+	header{
+    	height: 6em;
+    }
+	header {
+    	div{
+    		height: 5em;
+    		width: 5em;
+    		margin: 0;
+    	}
+    }
+    
+    .navBar {
+    	li{
+    		padding: 0 1em 0 1em;
+    		font-size: 1.5em;
+    	}
+    }
+    
+    .box{
+    	font-size: 2.5em;
+    }
+    .small-box{
+    	font-size: 1.3em;
+    	margin: .5em;
+    	padding: .5em;
+    }
+    .small-boxes{
+    	margin: 1em;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+    }
+	.apple,
+	.amazon{
+   		display: -webkit-box;
+   		display: -ms-flexbox;
+   		display: flex;
+    	-webkit-box-orient: horizontal;
+    	-webkit-box-direction: normal;
+    	    -ms-flex-direction: row;
+    	        flex-direction: row;
+    	-ms-flex-pack: distribute;
+    	    justify-content: space-around;
+  		width: 100%;
+  		margin:2em;
+	}
+	.info{
+		width: 40%;
+    	margin: 0.5em;
+    	font-size: 1em;
+    }
+   
+    .about{
+    	@include flex-row;
+		
+	}
+	.employee{
+		@include flex-row;
+		width: 25%;
+	}
+	.emp-info{
+		width: 70%;
+	}
+	.contact{
+		width: 78%;
+	}
+	.contact-info{
+		font-size: 1.5em;
+	}
+    a{
+    	font-size: 1em;
+    }
+    
+	footer {
+		ul{
+			font-size: 1.3em;
+			padding: 0;
+		}
+	}
+	
+	.about,
+	.contact-sec,
+	.project{
+		h2{
+		font-size: 2.5em;
+		margin-top: 1em;
+			
+		}
+	}
+	.clients {
+		h2{
+			font-size: 1.5em;
+			margin-top: 1em;
+		}
+	}
+}
