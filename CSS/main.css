@@ -135,8 +135,8 @@ header div {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     -webkit-transform: scale(2);
-    transform: scale(2); }
-
+    transform: scale(2); 
+}
 .info {
   display: -webkit-box;
   display: -ms-flexbox;
